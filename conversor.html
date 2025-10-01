@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<aside class="sidebar" role="navigation">
+    <div class="sidebar-logo">Navegación</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" >🏠 Inicio</a></li>
+            <li><a href="lector.html">📁 Lector</a></li>
+            <li><a href="conversor.html" class="active">▶️ Conversor</a></li>
+        </ul>
+    </nav>
+
+    <footer class="sidebar-footer">
+        <small>© 2025 Automatización</small>
+    </footer>
+</aside>
+
+<div class="app-container">
+    <header class="page-header">
+        <h2>Home</h2>
+    </header>
+    <main class="page-content">
+        <div class="page-header">
+            <h2>Conversor de Imágenes a Base64</h2>
+        </div>
+
+        <div class="page-content conversor-container">
+
+            <!-- Conversor -->
+            <div class="controls-card">
+                <h3>Subir imagen y convertir</h3>
+                <input type="file" id="image" accept="image/*">
+                <div class="button-group" style="margin-bottom: 10px">
+                    <button class="btn-primary" id="btnConvertir">Convertir</button>
+                    <button class="btn-primary" id="btnLimpiar" disabled>Limpiar</button>
+                </div>
+                <textarea id="base64Output" rows="6" readonly placeholder="Aquí aparecerá el Base64"></textarea>
+                <div class="button-group">
+                    <button class="btn-primary" id="btnCopiar" disabled>Copiar Base64</button>
+                </div>
+            </div>
+
+            <!-- Visualizador -->
+            <div class="viewer-card">
+                <h3>Visualizar una imagen desde Base64</h3>
+                <textarea id="b64InputManual" rows="6" placeholder="Pega aquí un Base64 para visualizar"></textarea>
+                <div class="button-group">
+                    <button class="btn-primary" id="btnVisualizar">Mostrar imagen</button>
+                </div>
+                <div id="previewSection" class="hidden">
+                    <h4>Vista previa:</h4>
+                    <img id="previewImage" alt="Vista previa" class="preview-img">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2025 Automatización - Boot Renegociación</p>
+    </footer>
+
+</div>
+<script src="js/conversor.js"></script>
+</body>
+</html>
