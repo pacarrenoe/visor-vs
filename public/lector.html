@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<aside class="sidebar" role="navigation">
+    <div class="sidebar-logo">Navegación</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" >🏠 Inicio</a></li>
+            <li><a href="lector.html" class="active">📁 Lector</a></li>
+            <li><a href="conversor.html" >▶️ Conversor</a></li>
+        </ul>
+    </nav>
+
+    <footer class="sidebar-footer">
+        <small>© 2025 Automatización</small>
+    </footer>
+</aside>
+
+<div class="app-container">
+    <header class="page-header">
+        <h2>Home</h2>
+    </header>
+    <main class="page-content">
+        <div class="page-header">
+            <h2>Lector de PDFs en Base64</h2>
+        </div>
+
+        <div class="page-content lector-container">
+            <!-- Controles -->
+            <div class="controls-card">
+                <h3>Ingresar Base64 del PDF</h3>
+                <textarea id="b64input" placeholder="Pega aquí el Base64 de tu PDF..."></textarea>
+                <div class="button-group">
+                    <button class="btn-primary" id="btnVisualizar">Visualizar</button>
+                    <button class="btn-primary" id="btnDescargar" disabled>Descargar</button>
+                    <button class="btn-primary" id="btnComparar" disabled>Comparar con anterior</button>
+                </div>
+            </div>
+
+            <!-- Vista previa (oculta por defecto) -->
+            <div class="viewer-card hidden" id="viewer">
+                <h3>Vista previa</h3>
+                <iframe id="visor"></iframe>
+            </div>
+
+            <!-- Comparación (oculta por defecto) -->
+            <div class="comparison-card hidden" id="comparison">
+                <div class="comparison-header">
+                    <h3>Comparación de PDFs</h3>
+                    <button id="btnCerrarComparacion" class="btn-close">✖</button>
+                </div>
+                <div class="comparison-view">
+                    <iframe id="visorAnterior"></iframe>
+                    <iframe id="visorActual"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© 2025 Automatización - Boot Renegociación</p>
+    </footer>
+
+</div>
+<script src="js/lector.js"></script>
+</body>
+</html>
